@@ -1,0 +1,12 @@
+services:
+  getapi-tr:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: getipapi
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
